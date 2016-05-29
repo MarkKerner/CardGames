@@ -1,22 +1,32 @@
-#include<array>
+#include <array>
+#include <algorithm>
 
 #include "deck.h"
 #include "card.h"
 
 
-Deck::Deck() : deckSize{0}
+Deck::Deck() : size{0}
 {
-    initCards();
+    generate();
 }
 
-void Deck::initCards()
+void Deck::generate()
 {
     for (int suit = 0; suit < Card::CS_Max; ++suit)
     {
         for (int rank = 0; rank < Card::CR_Max; ++rank)
         {
-            deck[deckSize++] = {static_cast<Card::Suit>(suit), static_cast<Card::Rank>(rank)};
+            cards[size++] = {static_cast<Card::Suit>(suit), static_cast<Card::Rank>(rank)};
         }
     }
+}
 
+void Deck::shuffle()
+{
+    std::random_shuffle(cards, cards + size);
+}
+
+Card Deck::popCard()
+{
+    return cards[--size];
 }

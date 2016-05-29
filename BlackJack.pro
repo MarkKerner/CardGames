@@ -17,10 +17,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     base/card.cpp \
-    base/deck.cpp
+    base/deck.cpp \
+    hand.cpp \
+    blackjackhandevaluator.cpp
 
 HEADERS  += mainwindow.h \
     base/card.h \
-    base/deck.h
+    base/deck.h \
+    hand.h \
+    blackjackhandevaluator.h
 
 FORMS    += mainwindow.ui
