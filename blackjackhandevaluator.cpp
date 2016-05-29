@@ -8,44 +8,61 @@
 
 int BlackjackHandEvaluator::eval(Hand& hand)
 {
-    std::vector<int> values {0};
 
-    for (auto handIt = hand.cards.begin(); handIt != hand.cards.end(); ++handIt)
+    //    int value = 0;
+    //    int numAces = 0;
+    //    for (Card card : hand.cards)
+    //    {
+    //        switch (card.rank)
+    //        {
+    //        case CR_Ace:
+    //            value += 11;
+    //            numAces += 1;
+    //            break;
+    //        default:
+    //            value += card.rank + 1;
+    //            break;
+    //        case CR_Jack:
+    //        case CR_Queen:
+    //        case CR_King:
+    //            value += 10;
+    //            break;
+    //        }
+    //    }
+
+    //    while (value > 21 && numAces > 0)
+    //    {
+    //        value -= 10;
+    //        --numAces;
+    //    }
+    //    return value;
+
+    int value = 0;
+    int numAces = 0;
+
+    for (Card card : hand.cards)
     {
-        Card card = *handIt;
-
-        for (auto valueIt = values.begin(); valueIt != values.end(); ++valueIt)
+        switch (card.rank)
         {
-
-            switch(card.rank)
-            {
-            case Card::Rank::CR_Ace:
-                //values.push_back(*valueIt + 1);
-                //values.push_back(*valueIt + 11);
-                //values.erase(valueIt);
-                break;
-
-            case Card::Rank::CR_Jack:
-            case Card::Rank::CR_Queen:
-            case Card::Rank::CR_King:
-                 *valueIt += 10;
-                break;
-            default:
-                *valueIt += card.rank + 1;
-                break;
-            }
+        case Card::CR_Ace:
+            value += 11;
+            ++numAces;
+            break;
+        case Card::CR_Jack:
+        case Card::CR_Queen:
+        case Card::CR_King:
+            value += 10;
+            break;
+        default:
+            value += card.rank + 1;
+            break;
         }
     }
 
-    //
-    sort(values.begin(), values.end(), std::greater<int>());
-
-    auto valueIt = values.begin();
-    for (; valueIt != values.end(); ++valueIt)
+    while (value > 21 && numAces > 0)
     {
-        int value = *valueIt;
-        if (value <= 21)
-            return value;
+        value -= 10;
+        --numAces;
     }
-    return *valueIt;
+    return value;
 }

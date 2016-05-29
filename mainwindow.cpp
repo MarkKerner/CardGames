@@ -8,27 +8,8 @@
 #include "blackjackhandevaluator.h"
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    QMainWindow(parent)
 {
-    for (int i = 0; i < 100; ++i)
-    {
-        Deck deck;
-        deck.shuffle();
-        Hand hand;
-        Card card1 = deck.popCard();
-        Card card2 = deck.popCard();
+    setFixedSize(800, 600);
 
-        hand.addCard(card1);
-        hand.addCard(card2);
-
-        std::cout << card1 << '\t' << card2 << '\t' << BlackjackHandEvaluator::eval(hand) << std::endl;
-    }
-
-    ui->setupUi(this);
-}
-
-MainWindow::~MainWindow()
-{
-    delete ui;
 }

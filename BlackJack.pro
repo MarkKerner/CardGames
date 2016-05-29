@@ -27,4 +27,4 @@ HEADERS  += mainwindow.h \
     hand.h \
     blackjackhandevaluator.h
 
-FORMS    += mainwindow.ui
+FORMS    +=
