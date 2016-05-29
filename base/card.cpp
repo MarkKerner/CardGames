@@ -11,13 +11,13 @@ std::string Card::suitString(const Suit &suit) const
 {
     switch (suit)
     {
-    case Suit::Hearts:
+    case Suit::CS_Hearts:
         return "Hearts";
-    case Suit::Diamonds:
+    case Suit::CS_Diamonds:
         return "Diamonds";
-    case Suit::Clubs:
+    case Suit::CS_Clubs:
         return "Clubs";
-    case Suit::Spades:
+    case Suit::CS_Spades:
         return "Spades";
     default:
         return nullptr;
@@ -28,31 +28,31 @@ std::string Card::rankString(const Rank &rank) const
 {
     switch(rank)
     {
-    case Rank::Ace:
+    case Rank::CR_Ace:
         return "Ace";
-    case Rank::Two:
+    case Rank::CR_Two:
         return "Two";
-    case Rank::Three:
+    case Rank::CR_Three:
         return "Three";
-    case Rank::Four:
+    case Rank::CR_Four:
         return "Four";
-    case Rank::Five:
+    case Rank::CR_Five:
         return "Five";
-    case Rank::Six:
+    case Rank::CR_Six:
         return "Six";
-    case Rank::Seven:
+    case Rank::CR_Seven:
         return "Seven";
-    case Rank::Eight:
+    case Rank::CR_Eight:
         return "Eight";
-    case Rank::Nine:
+    case Rank::CR_Nine:
         return "Nine";
-    case Rank::Ten:
+    case Rank::CR_Ten:
         return "Ten";
-    case Rank::Jack:
+    case Rank::CR_Jack:
         return "Jack";
-    case Rank::Queen:
+    case Rank::CR_Queen:
         return "Queen";
-    case Rank::King:
+    case Rank::CR_King:
         return "King";
     default:
         return nullptr;

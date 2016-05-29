@@ -7,29 +7,31 @@
 class Card
 {
 public:
-    enum class Suit
+    enum Suit
     {
-        Hearts,
-        Diamonds,
-        Clubs,
-        Spades
+        CS_Hearts,
+        CS_Diamonds,
+        CS_Clubs,
+        CS_Spades,
+        CS_Max
     };
 
-    enum class Rank
+    enum Rank
     {
-        Ace,
-        Two,
-        Three,
-        Four,
-        Five,
-        Six,
-        Seven,
-        Eight,
-        Nine,
-        Ten,
-        Jack,
-        Queen,
-        King
+        CR_Ace,
+        CR_Two,
+        CR_Three,
+        CR_Four,
+        CR_Five,
+        CR_Six,
+        CR_Seven,
+        CR_Eight,
+        CR_Nine,
+        CR_Ten,
+        CR_Jack,
+        CR_Queen,
+        CR_King,
+        CR_Max
     };
 
     Suit suit;

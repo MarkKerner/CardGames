@@ -8,7 +8,10 @@
 class Deck
 {
 public:
-    std::vector<Card> cards;
+    static const int numSuits = Card::CS_Max;
+    static const int numRanks = Card::CR_Max;
+
+    std::vector<Card> deck;
 
     Deck();
 

@@ -12,6 +12,12 @@ Deck::Deck()
 
 void Deck::initCards()
 {
-    std::array<Card::Suit, 4> suits {Card::Suit::Clubs, Card::Suit::Diamonds, Card::Suit::Hearts, Card::Suit::Spades};
+    for (int suit = 0; suit < Card::CS_Max; ++suit)
+    {
+        for (int rank = 0; rank < Card::CR_Max; ++rank)
+        {
+            deck.push_back({static_cast<Card::Suit>(suit), static_cast<Card::Rank>(rank)});
+        }
+    }
 
 }
