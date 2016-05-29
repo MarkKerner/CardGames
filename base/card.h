@@ -37,6 +37,7 @@ public:
     Suit suit;
     Rank rank;
 
+    Card() = default;
     Card(Suit suit, Rank rank);
 
 protected:

@@ -11,7 +11,8 @@ public:
     static const int numSuits = Card::CS_Max;
     static const int numRanks = Card::CR_Max;
 
-    std::vector<Card> deck;
+    Card deck [numSuits * numRanks];
+    unsigned short deckSize;
 
     Deck();
 

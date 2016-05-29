@@ -1,11 +1,10 @@
-
 #include<array>
 
 #include "deck.h"
 #include "card.h"
 
 
-Deck::Deck()
+Deck::Deck() : deckSize{0}
 {
     initCards();
 }
@@ -16,7 +15,7 @@ void Deck::initCards()
     {
         for (int rank = 0; rank < Card::CR_Max; ++rank)
         {
-            deck.push_back({static_cast<Card::Suit>(suit), static_cast<Card::Rank>(rank)});
+            deck[deckSize++] = {static_cast<Card::Suit>(suit), static_cast<Card::Rank>(rank)};
         }
     }
 
