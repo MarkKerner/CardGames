@@ -34,16 +34,10 @@ public:
         CR_Max
     };
 
-    Suit suit;
-    Rank rank;
-
-    Card() = default;
-    Card(Suit suit, Rank rank);
+    const Suit& suit;
+    const Rank& rank;
 
 protected:
-    std::string suitString(const Suit &suit) const;
-    std::string rankString(const Rank &rank) const;
-
     friend std::ostream &operator<<(std::ostream &stream,
                                     const Card &c);
 };

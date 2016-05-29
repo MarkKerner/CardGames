@@ -2,66 +2,33 @@
 
 #include "card.h"
 
-Card::Card(Suit suit, Rank rank) : suit(suit), rank(rank)
+std::string to_string(Card::Suit suit)
 {
+    static const char* values[Card::Suit::CS_Max] =
+    {
+        "Hearts", "Diamons", "Clubs", "Spades"
+    };
 
+    return 0 <= suit && suit < Card::Suit::CS_Max ? values[suit] : "<invalid>";
 }
 
-std::string Card::suitString(const Suit &suit) const
+std::string to_string(Card::Rank rank)
 {
-    switch (suit)
+    static const char* values[Card::Rank::CR_Max] =
     {
-    case Suit::CS_Hearts:
-        return "Hearts";
-    case Suit::CS_Diamonds:
-        return "Diamonds";
-    case Suit::CS_Clubs:
-        return "Clubs";
-    case Suit::CS_Spades:
-        return "Spades";
-    default:
-        return nullptr;
-    }
-}
+        "Ace", "Two", "Three",
+        "Four", "Five", "Six",
+        "Seven", "Eight", "Nine",
+        "Ten", "Jack", "Queen",
+        "King"
+    };
 
-std::string Card::rankString(const Rank &rank) const
-{
-    switch(rank)
-    {
-    case Rank::CR_Ace:
-        return "Ace";
-    case Rank::CR_Two:
-        return "Two";
-    case Rank::CR_Three:
-        return "Three";
-    case Rank::CR_Four:
-        return "Four";
-    case Rank::CR_Five:
-        return "Five";
-    case Rank::CR_Six:
-        return "Six";
-    case Rank::CR_Seven:
-        return "Seven";
-    case Rank::CR_Eight:
-        return "Eight";
-    case Rank::CR_Nine:
-        return "Nine";
-    case Rank::CR_Ten:
-        return "Ten";
-    case Rank::CR_Jack:
-        return "Jack";
-    case Rank::CR_Queen:
-        return "Queen";
-    case Rank::CR_King:
-        return "King";
-    default:
-        return nullptr;
-    }
+    return 0 <= rank && rank < Card::Rank::CR_Max ? values[rank] : "<invalid>";
 }
 
 
 std::ostream &operator<<(std::ostream &stream,
                          const Card &c)
 {
-    return stream << c.rankString(c.rank) << " of " << c.suitString(c.suit);
+    return stream << to_string(c.rank) << " of " << to_string(c.suit);
 }
