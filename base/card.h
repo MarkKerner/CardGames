@@ -34,8 +34,8 @@ public:
         CR_Max
     };
 
-    const Suit& suit;
-    const Rank& rank;
+    Suit suit;
+    Rank rank;
 
 protected:
     friend std::ostream &operator<<(std::ostream &stream,
