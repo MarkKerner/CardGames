@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 
+
 class Card
 {
 public:
@@ -36,10 +37,15 @@ public:
 
     Suit suit;
     Rank rank;
-
 protected:
     friend std::ostream &operator<<(std::ostream &stream,
                                     const Card &c);
 };
+
+
+std::string to_string(const Card::Suit& suit);
+std::string to_string(const Card::Rank& rank);
+std::string to_string(const Card& card);
+
 
 #endif // CARD_H

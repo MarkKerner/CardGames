@@ -5,13 +5,14 @@
 #include "card.h"
 
 
-Deck::Deck() : size{0}
+Deck::Deck()
 {
     generate();
 }
 
 void Deck::generate()
 {
+    size = 0;
     for (int suit = 0; suit < Card::CS_Max; ++suit)
     {
         for (int rank = 0; rank < Card::CR_Max; ++rank)

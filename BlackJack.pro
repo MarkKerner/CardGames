@@ -19,12 +19,16 @@ SOURCES += main.cpp\
     base/card.cpp \
     base/deck.cpp \
     hand.cpp \
-    blackjackhandevaluator.cpp
+    blackjackhandevaluator.cpp \
+    blackjackgame.cpp \
+    widget/cardwidget.cpp
 
 HEADERS  += mainwindow.h \
     base/card.h \
     base/deck.h \
     hand.h \
-    blackjackhandevaluator.h
+    blackjackhandevaluator.h \
+    blackjackgame.h \
+    widget/cardwidget.h
 
 FORMS    +=
